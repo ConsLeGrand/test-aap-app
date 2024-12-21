@@ -1,1 +1,8 @@
 ---
+- name: test auto dep origins
+  hosts: all
+  become: true 
+  tasks: 
+    - name: affiche message 
+      ansible.builtin.debug:
+        msg: "ce ci est un test"
