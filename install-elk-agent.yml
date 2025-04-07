@@ -16,7 +16,7 @@
 
     - name: Installer Elastic Agent
       ansible.builtin.command:
-        cmd: "./elastic-agent install --url=https://fleet02.heritage.africa:8220  --enrollment-token=RW9aT19KVUJqaDY5SjNjbDFuTUQ6YVhOYlZtQmpUdHlJYVNud3ZxV1NfUQ=="
+        cmd: "./elastic-agent install --url=https://fleet02.heritage.africa:8220  --enrollment-token=RW9aT19KVUJqaDY5SjNjbDFuTUQ6YVhOYlZtQmpUdHlJYVNud3ZxV1NfUQ== --insecure"
         chdir: "/tmp/elastic-agent-8.17.4-linux-x86_64"
       args:
         stdin: "yes"
