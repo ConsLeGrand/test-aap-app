@@ -1,0 +1,7 @@
+---
+- name: Désinstaller Elastic Agent via dnf des serveurs cibles
+  hosts: all
+  tasks:
+    - name: desinstaller elk agents
+      ansible.builtin.command: "elastic-agent uninstall"
+
