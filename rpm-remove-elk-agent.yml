@@ -1,0 +1,42 @@
+---
+- name: Désinstaller Elastic Agent
+  hosts: all
+  become: yes
+  tasks:
+
+    - name: Arrêter le service Elastic Agent
+      ansible.builtin.systemd:
+        name: elastic-agent
+        state: stopped
+        enabled: no
+
+    - name: Vérifier si le paquet elastic-agent est installé
+      ansible.builtin.shell: rpm -q elastic-agent
+      register: elastic_agent_installed
+      ignore_errors: yes
+
+    - name: Désinstaller le paquet elastic-agent (si présent)
+      ansible.builtin.yum:
+        name: elastic-agent
+        state: absent
+      when: elastic_agent_installed.rc == 0
+
+    - name: Supprimer le dossier /opt/Elastic/Agent
+      ansible.builtin.file:
+        path: /opt/Elastic/Agent
+        state: absent
+
+    - name: Supprimer le dossier /etc/elastic-agent
+      ansible.builtin.file:
+        path: /etc/elastic-agent
+        state: absent
+
+    - name: Supprimer le dossier /var/lib/elastic-agent
+      ansible.builtin.file:
+        path: /var/lib/elastic-agent
+        state: absent
+
+    - name: Supprimer le dossier /var/log/elastic-agent
+      ansible.builtin.file:
+        path: /var/log/elastic-agent
+        state: absent
