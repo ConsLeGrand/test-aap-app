@@ -4,4 +4,6 @@
   tasks:
     - name: desinstaller elk agents
       ansible.builtin.command: "elastic-agent uninstall"
+      args:
+        stdin: "yes"
 
