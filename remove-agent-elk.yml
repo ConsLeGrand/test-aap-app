@@ -19,10 +19,10 @@
 
     - name: Supprimer l'archive téléchargée
       ansible.builtin.file:
-        path: "/tmp/elastic-agent-8.16.4-linux-x86_64.tar.gz"
+        path: "/tmp/elastic-agent-8.17.4-linux-x86_64.tar.gz"
         state: absent
 
     - name: Supprimer le dossier extrait
       ansible.builtin.file:
-        path: "/tmp/elastic-agent-8.16.4-linux-x86_64"
+        path: "/tmp/elastic-agent-8.17.4-linux-x86_64"
         state: absent
