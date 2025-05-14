@@ -4,19 +4,19 @@
   tasks:
     - name: Télécharger Elastic Agent
       get_url:
-       url: "https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.17.4-linux-x86_64.tar.gz"
-       dest: "/tmp/elastic-agent-8.17.4-linux-x86_64.tar.gz"
+       url: "https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.17.6-linux-x86_64.tar.gz"
+       dest: "/tmp/elastic-agent-8.17.6-linux-x86_64.tar.gz"
        mode: '0644'
 
     - name: Extraire Elastic Agent
       ansible.builtin.unarchive:
-        src: "/tmp/elastic-agent-8.17.4-linux-x86_64.tar.gz"
+        src: "/tmp/elastic-agent-8.17.6-linux-x86_64.tar.gz"
         dest: "/tmp/"
         remote_src: yes
 
     - name: Installer Elastic Agent
       ansible.builtin.command:
-        cmd: "./elastic-agent install --url=https://fleet02.heritage.africa:8220  --enrollment-token=RW9aT19KVUJqaDY5SjNjbDFuTUQ6YVhOYlZtQmpUdHlJYVNud3ZxV1NfUQ== --insecure"
-        chdir: "/tmp/elastic-agent-8.17.4-linux-x86_64"
+        cmd: "./elastic-agent install --url=https://fleet02.heritage.africa:8220 --enrollment-token=ZzVwc3o1WUJHeFB3blF0RUJQYm06a2NFTlhNdnZSMnVmMGxrQjRnZ1NMdw== --insecure"
+        chdir: "/tmp/elastic-agent-8.17.6-linux-x86_64"
       args:
         stdin: "yes"
