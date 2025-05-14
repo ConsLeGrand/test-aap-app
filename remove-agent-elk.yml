@@ -8,9 +8,9 @@
       ignore_errors: yes
       changed_when: false
 
-    - name: Désinstaller Elastic Agent
-      ansible.builtin.command: "/usr/bin/elastic-agent uninstall --force"
-      when: agent_status.rc == 0
+   # - name: Désinstaller Elastic Agent
+   #   ansible.builtin.command: "/usr/bin/elastic-agent uninstall --force"
+   #   when: agent_status.rc == 0
 
     - name: Supprimer le répertoire Elastic Agent
       ansible.builtin.file:
