@@ -9,6 +9,7 @@
         name: elastic-agent
         state: stopped
         enabled: no
+      ignore_errors: yes
 
     - name: Vérifier si le paquet elastic-agent est installé
       ansible.builtin.shell: rpm -q elastic-agent
