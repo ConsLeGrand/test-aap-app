@@ -2,17 +2,17 @@
 - name: Installer Elastic Agent sur les serveurs cibles
   hosts: all
   tasks:
-    - name: Télécharger Elastic Agent
-      get_url:
-       url: "https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.17.6-linux-x86_64.tar.gz"
-       dest: "/tmp/elastic-agent-8.17.6-linux-x86_64.tar.gz"
-       mode: '0644'
+    #- name: Télécharger Elastic Agent
+    #  get_url:
+    #   url: "https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.17.6-linux-x86_64.tar.gz"
+    #   dest: "/tmp/elastic-agent-8.17.6-linux-x86_64.tar.gz"
+    #   mode: '0644'
 
-    - name: Extraire Elastic Agent
-      ansible.builtin.unarchive:
-        src: "/tmp/elastic-agent-8.17.6-linux-x86_64.tar.gz"
-        dest: "/tmp/"
-        remote_src: yes
+    #- name: Extraire Elastic Agent
+    #  ansible.builtin.unarchive:
+    #    src: "/tmp/elastic-agent-8.17.6-linux-x86_64.tar.gz"
+    #    dest: "/tmp/"
+    #    remote_src: yes
 
     - name: Installer Elastic Agent
       ansible.builtin.command:
