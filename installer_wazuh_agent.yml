@@ -1,6 +1,6 @@
 ---
 - name: Installer Wazuh Agent sur les hôtes Linux
-  hosts: agents_wazuh
+  hosts: all
   become: true
   vars:
     wazuh_agent_url: "https://packages.wazuh.com/4.x/yum/wazuh-agent-4.12.0-1.x86_64.rpm"
