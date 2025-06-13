@@ -1,0 +1,12 @@
+---
+- name: Installer Wazuh Agent sur les serveurs cibles
+  hosts: all
+  tasks:
+    - name: Télécharger et installer Wazuh Agent
+      command: "curl -o wazuh-agent-4.12.0-1.x86_64.rpm https://packages.wazuh.com/4.x/yum/wazuh-agent-4.12.0-1.x86_64.rpm && sudo WAZUH_MANAGER='192.168.15.103' rpm -ihv wazuh-agent-4.12.0-1.x86_64.rpm"
+
+    - name: Activer et Démarrer le service Wazuh Agent
+      service:
+        name: wazuh-agent
+        enabled: yes
+        state: started
